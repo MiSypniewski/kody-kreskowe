@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">
+    <div class="kontener"></div>
+    <div class="kontener">
+      <div class="imgWrapper">
+        <img class="obrazek" src="ean128.png" />
+      </div>
+      <div class="imgWrapper">
+        <img class="obrazek" src="ean13.png" />
+      </div>
+      <div class="imgWrapper">
+        <img class="obrazek" src="forcomQR.png" alt="">
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  const delayTimeInSec = 300;
+  const img = document.querySelectorAll(".obrazek");
+  const imgWrapper = document.querySelectorAll(".imgWrapper");
+  const files = ["ean128.png", "ean13.png", "forcomQR.png", "ean128_2.png", "ean13_2.png", "biedronkaQR.png"];
+  const scanTime = files.length * 2;
+
+  let global = 0;
+  let licznik = 0;
+
+  const interval1 = setInterval(() => {
+
+    img.forEach((image) => {
+      image.src = files[licznik];
+    })
+
+    licznik++;
+    if (licznik > files.length - 1) {
+      licznik = 0;
+    }
+
+    // global++;
+    // console.log(global);
+
+    // if (global === scanTime) {
+    //   img.forEach((image) => {
+    //     image.style.display = "none";
+    //   })
+    // }
+
+    // if (global === delayTimeInSec + scanTime) {
+    //   global = 0;
+    //   img.forEach((image) => {
+    //     image.style.display = "block";
+    //   })
+    // }
+  }, 700)
+
+
+</script>
+
+</html>
